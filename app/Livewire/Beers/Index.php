@@ -11,11 +11,11 @@ use Masmerise\Toaster\Toaster;
 class Index extends Component
 {
     use WithPagination;
-    
+
     protected BeerService $beerService;
 
     public string $sortBy = '';
-    
+
     public string $sortDirection = '';
 
     public array $filters = [];
@@ -47,6 +47,7 @@ class Index extends Component
 
     public function remove(Beer $beer)
     {
+        $this->authorize('delete', $beer);
         $beer->delete();
 
         Toaster::success("Beer '{$beer->name}' removida com sucesso!");
