@@ -62,7 +62,7 @@ class ImageUploader extends Component
 
         foreach ($this->images as $index => $image)
         {
-            $path = $image->store($this->storagePath);
+            $path = $image->store($this->storagePath, 's3');
             $this->model->images()->create([
                 'path' => $path,
                 'is_cover' => $hasNoCover && $index === 0,
