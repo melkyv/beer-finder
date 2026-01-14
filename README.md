@@ -14,6 +14,9 @@ This is a Laravel application that helps users find beers. It includes an AI-pow
     *   Flux UI
 *   **Database:**
     *   PostgreSQL (for vector search)
+*   **Storage & Queue:**
+    *   Amazon S3 (Used for storing and serving uploaded images (e.g., beer and stores images))
+    *   Amazon SQS (Used for asynchronous job processing)
 *   **Testing:**
     *   Pest
 *   **AI:**
